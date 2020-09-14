@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './AddPlayer.scss'
 
 const axios = require('axios')
+export const url = 'https://pure-peak-83435.herokuapp.com'
 export default class AddPlayer extends React.Component {
     constructor() {
         super()
@@ -35,7 +36,7 @@ export default class AddPlayer extends React.Component {
         else this.setState({ [e.target.name]: e.target.value })
     }
     handleSubmit(e) {
-        axios.post('http://localhost:5000/api/players/addPlayer', {
+        axios.post(`${url}/api/players/addPlayer`, {
             name: this.state.name,
             height: this.state.height,
             teams: this.state.teams

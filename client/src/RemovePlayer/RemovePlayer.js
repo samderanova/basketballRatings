@@ -4,6 +4,7 @@ import { Alert, AlertTitle } from '@material-ui/lab'
 import { FormControl, InputLabel, Input } from '@material-ui/core' 
 import 'bootstrap/dist/css/bootstrap.css'
 import axios from 'axios'
+import { url } from '../AddPlayer/AddPlayer'
 
 const styles = {
     position: 'absolute',
@@ -30,11 +31,11 @@ export default class RemovePlayer extends React.Component {
         this.handleChange = this.handleChange.bind(this)
     }
     handleSubmit(e) {
-        axios.get('http://localhost:5000/api/players/')
+        axios.get(`${url}/api/players/`)
             .then(res => {
                 for (var playerObj of res.data) {
                     if (playerObj.name === this.state.input) {
-                        axios.delete(`http://localhost:5000/api/players/removePlayer/${playerObj._id}`)
+                        axios.delete(`${url}/api/players/removePlayer/${playerObj._id}`)
                             .then(_ => AlertUser("success", "Success!", "Player Removed!"))
                             .catch(err => {
                                 console.log(`Error: ${err}`)

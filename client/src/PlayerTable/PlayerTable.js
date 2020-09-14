@@ -2,6 +2,7 @@ import React from 'react'
 import { Icon, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, CircularProgress } from '@material-ui/core'
 import axios from 'axios'
 import RenderPlayer from '../RenderPlayer/RenderPlayer'
+import { url } from '../AddPlayer/AddPlayer'
 import './PlayerTable.scss'
 
 export default class PlayerTable extends React.Component {
@@ -15,7 +16,7 @@ export default class PlayerTable extends React.Component {
     this.changeVote = this.changeVote.bind(this)
   }
   componentDidMount() {
-    axios.get('http://localhost:5000/api/players')
+    axios.get(`${url}/api/players`)
       .then(res => this.setState({
         isLoading: false,
         players: res.data,
@@ -24,7 +25,7 @@ export default class PlayerTable extends React.Component {
       .catch(err => console.log(err))
   }
   changeVote(player, upOrDown) {
-    axios.post(`http://localhost:5000/api/players/editPlayer/${player._id}`, {
+    axios.post(`${url}/api/players/editPlayer/${player._id}`, {
       name: player.name,
       height: player.height,
       teams: player.teams,
