@@ -1,0 +1,29 @@
+.PlayerTable {
+    .addPlayer {
+        span {
+            font-size: 60px;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        span:hover {
+            opacity: 0.6;
+            transition: 0.1s linear;
+            cursor: pointer;
+        }
+    }
+    td {
+        p, span {
+            vertical-align: middle;
+        }
+        span {
+            margin: 0 5px;
+        }
+        span:hover {
+            background-color: lightgray;
+            border-radius: 100%;
+            transition: 0.1s linear;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.AddPlayer {
+    display: flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    font-size: 25px;
+    .MuiFormControl-root { 
+        display: block !important;
+        margin: 40px 100px;
+    }
+    Button {
+        display: block !important;
+        margin: 30px 100px;
+    }
+    h3 {
+        text-align: center;
+    }
+    label {
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .AddPlayer {
+        height: 110vh;
+    }
+}
+@media only screen and (min-height: 600px) and (max-height: 1000px) {
+    .AddPlayer {
+        height: 90vh;
+    }
+}
+
+@media only screen and (min-height: 1000px) and (max-height: 1300px) {
+    .AddPlayer {
+        height: 120vh;
+    }
+}
+
+@media only screen and (min-height: 1300px) {
+    .AddPlayer {
+        height: 80vh;
+    }
+}
