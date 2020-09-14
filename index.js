@@ -17,6 +17,7 @@ const uri = process.env.ATLAS_URI
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
 const connection = mongoose.connection
 connection.once('open', _ => console.log('Successfully connected to MongoDB database'))
+    .catch(err => console.log(err))
 
 const playerRouter = require('./routes/player')
 app.use('/api/players', playerRouter)
