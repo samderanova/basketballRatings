@@ -1,10 +1,13 @@
 const express = require('express')
+const path = require('path')
 const cors = require('cors')
 const mongoose = require('mongoose')
 
 require('dotenv').config()
 
 const app = express()
+app.use(express.static(path.join(__dirname, 'client/build')))
+
 const port = process.env.PORT || 5000
 
 app.use(cors())
