@@ -1,19 +1,26 @@
 .PlayerTable {
-    .addPlayer {
-        span {
-            font-size: 60px;
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-        }
-        span:hover {
-            opacity: 0.6;
-            transition: 0.1s linear;
-            cursor: pointer;
-        }
+    @media only screen and (min-width: 800px) {
+        margin: 20px 100px;
+    }
+    @media only screen and (max-width: 800px) {
+        margin: 20px 0;
+    }
+    #addPlayerBtn {
+        font-size: 50px;
+        position: fixed;
+        bottom: 20px;
+        right: 15px;
+    }
+    #addPlayerBtn:hover {
+        opacity: 0.6;
+        transition: 0.1s linear;
+        cursor: pointer;
+    }
+    td, th {
+        text-align: center;
     }
     td {
-        p, span {
+        span {
             vertical-align: middle;
         }
         span {
